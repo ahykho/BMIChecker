@@ -83,9 +83,9 @@ public class MainActivity extends AppCompatActivity {
 
         private void showBMI(int bmi) {
 
-        if (bmi < 18.5){
+        if (bmi < 17.5){
             showCustomDialog(R.drawable.underweight, "UnderWeight", "take a Senzu Bean!!!");
-        }else if(bmi > 18.5 && bmi < 24.9){
+        }else if(bmi > 17.5 && bmi < 26){
             showCustomDialog(R.drawable.normalweight, "NormalWeight", "Keep your head up like that!!!");
         }else{
             showCustomDialog(R.drawable.overweight, "OverWeight", "..back to the training chamber lazy fatass");
