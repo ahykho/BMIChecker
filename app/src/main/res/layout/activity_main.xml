@@ -182,7 +182,7 @@
                 android:layout_below="@id/height"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
-                android:text="0 cm"
+                android:text="150 cm"
                 android:textColor="@color/black"
                 android:textSize="32sp"
                 tools:ignore="HardcodedText" />

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private SeekBar.OnSeekBarChangeListener listener = new SeekBar.OnSeekBarChangeListener() {
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-            height_value.setText(String.valueOf(progress));
+            height_value.setText(String.valueOf(String.format("%d Cm", progress)));
         }
         @Override
         public void onStartTrackingTouch(SeekBar seekBar) {
@@ -73,30 +74,52 @@ public class MainActivity extends AppCompatActivity {
     public void showResult(View view) {
         int get_age = Integer.parseInt(age.getText().toString());
         int weight_value = Integer.parseInt(weight.getText().toString());
-        int get_height = Integer.parseInt(height_value.getText().toString())/ 100;
+        double get_height = (double)seekBar.getProgress()/ 100;
 
-        int mbi = weight_value / get_height * get_height;
+        int bmi = weight_value / (int)(get_height * get_height);
 
-        showBMI(mbi);
+        showBMI(bmi);
         }
 
-        private void showBMI(int mbi) {
-            ViewGroup viewGroup = findViewById(android.R.id.content);
-            View view = LayoutInflater.from(this).inflate(R.layout.custome_dialog, viewGroup, false);
-            AppCompatButton ok = view.findViewById(R.id.ok);
+        private void showBMI(int bmi) {
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setView(view);
+        if (bmi < 18.5){
+            showCustomDialog(R.drawable.underweight, "UnderWeight", "take a Senzu Bean!!!");
+        }else if(bmi > 18.5 && bmi < 24.9){
+            showCustomDialog(R.drawable.normalweight, "NormalWeight", "Keep your head up like that!!!");
+        }else{
+            showCustomDialog(R.drawable.overweight, "OverWeight", "..back to the training chamber lazy fatass");
+        }
 
-            AlertDialog alertDialog = builder.create();
-            alertDialog.show();
+    }
 
-            ok.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    alertDialog.dismiss();
-                }
-            });
+    private void showCustomDialog(int id, String title, String tip) {
+        ViewGroup viewGroup = findViewById(android.R.id.content);
+        View view = LayoutInflater.from(this).inflate(R.layout.custome_dialog, viewGroup, false);
+        AppCompatButton ok = view.findViewById(R.id.ok);
+        ImageView imageView = view.findViewById(R.id.image_view);
+        TextView result_title = view.findViewById(R.id.result_title);
+        TextView tips = view.findViewById(R.id.tips);
+        imageView.setImageResource(id);
+        result_title.setText(title);
+        tips.setText(tip);
+
+
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setView(view);
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+
+            }
+        });
     }
 }
 //page seems ok..
