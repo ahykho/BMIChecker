@@ -73,19 +73,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void showResult(View view) {
         int get_age = Integer.parseInt(age.getText().toString());
-        int weight_value = Integer.parseInt(weight.getText().toString());
+        double weight_value = Integer.parseInt(weight.getText().toString());
         double get_height = (double)seekBar.getProgress()/ 100;
 
-        int bmi = weight_value / (int)(get_height * get_height);
+        double bmi = weight_value / (double)(get_height * get_height);
 
         showBMI(bmi);
         }
 
-        private void showBMI(int bmi) {
+        private void showBMI(double bmi) {
 
-        if (bmi < 17.5){
+        if (bmi < 18.5){
             showCustomDialog(R.drawable.underweight, "UnderWeight", "take a Senzu Bean!!!");
-        }else if(bmi > 17.5 && bmi < 26){
+        }else if(bmi > 18.5 && bmi < 24.9){
             showCustomDialog(R.drawable.normalweight, "NormalWeight", "Keep your head up like that!!!");
         }else{
             showCustomDialog(R.drawable.overweight, "OverWeight", "..back to the training chamber lazy fatass");
