@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         height_value = findViewById(R.id.height_value);
 
     }
-
+    // Seekbar coding for Height //
     private SeekBar.OnSeekBarChangeListener listener = new SeekBar.OnSeekBarChangeListener() {
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -42,35 +42,35 @@ public class MainActivity extends AppCompatActivity {
         public void onStopTrackingTouch(SeekBar seekBar) {
         }
     };
-
+    // Code increasing Age by clicks
     public void increaseAge(View view) {
         if (Integer.parseInt(age.getText().toString())  > 0 ){
             int age_value = Integer.parseInt(age.getText().toString()) + 1;
             age.setText(String.valueOf(age_value));
         }
     }
-
+    // Code decreasing Age by clicks
     public void decreaseAge(View view) {
         if (Integer.parseInt(age.getText().toString())  > 1 ){
             int age_value = Integer.parseInt(age.getText().toString()) - 1;
             age.setText(String.valueOf(age_value));
         }
     }
-
+    // Code increasing weight by click
     public void increaseWeight(View view) {
         if (Integer.parseInt(weight.getText().toString())  > 0 ){
             int weight_value = Integer.parseInt(weight.getText().toString()) + 1;
             weight.setText(String.valueOf(weight_value));
         }
     }
-
+    // Code decreasing weight by click
     public void decreaseWeight(View view) {
         if (Integer.parseInt(weight.getText().toString())  > 1 ){
             int weight_value = Integer.parseInt(weight.getText().toString()) - 1;
             weight.setText(String.valueOf(weight_value));
         }
     }
-
+    // calculating input clicks
     public void showResult(View view) {
         int get_age = Integer.parseInt(age.getText().toString());
         double weight_value = Integer.parseInt(weight.getText().toString());
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
         showBMI(bmi);
         }
-
+        // Showing results based on calculation
         private void showBMI(double bmi) {
 
         if (bmi < 18.5){
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
+    // Setter for custom
     private void showCustomDialog(int id, String title, String tip) {
         ViewGroup viewGroup = findViewById(android.R.id.content);
         View view = LayoutInflater.from(this).inflate(R.layout.custome_dialog, viewGroup, false);
