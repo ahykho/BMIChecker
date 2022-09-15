@@ -15,4 +15,11 @@ public class SportActivity extends AppCompatActivity {
 
     public void showSport(View view) {
     }
+
+    // experimental back button..
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.onPause();
+    }
 }

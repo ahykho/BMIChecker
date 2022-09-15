@@ -15,5 +15,12 @@ public class NutriActivity extends AppCompatActivity {
 
     public void showNutrient(View view) {
     }
+
+    // experimental back button..
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.onPause();
+    }
 }
 
