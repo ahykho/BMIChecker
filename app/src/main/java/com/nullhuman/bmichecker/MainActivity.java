@@ -105,8 +105,6 @@ public class MainActivity extends AppCompatActivity {
         tips.setText(tip);
 
 
-
-
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setView(view);
 
@@ -121,5 +119,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    // new checked working page-switch |main -to- Nutri && main -to- Sport|
+    public void showNutrient(View view) {
+        setContentView(R.layout.activity_nutri);
+    }
+
+    public void showSport(View view) {
+        setContentView(R.layout.activity_sport);
+    }
 }
-//page seems ok..
+//page seems ok.. almost
