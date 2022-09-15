@@ -104,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
         result_title.setText(title);
         tips.setText(tip);
 
-
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setView(view);
 
@@ -115,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 alertDialog.dismiss();
-
             }
         });
     }
@@ -128,4 +126,5 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sport);
     }
 }
+
 //page seems ok.. almost
