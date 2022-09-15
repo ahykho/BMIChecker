@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatSeekBar;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,10 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
     // Seekbar coding for Height //
-    private SeekBar.OnSeekBarChangeListener listener = new SeekBar.OnSeekBarChangeListener() {
+    private final SeekBar.OnSeekBarChangeListener listener = new SeekBar.OnSeekBarChangeListener() {
+        @SuppressLint("DefaultLocale")
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-            height_value.setText(String.valueOf(String.format("%d Cm", progress)));
+            height_value.setText(String.format("%d Cm", progress));
         }
         @Override
         public void onStartTrackingTouch(SeekBar seekBar) {
@@ -70,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             weight.setText(String.valueOf(weight_value));
         }
     }
-    // calculating input clicks
+    // calculating input clicks && age not defined yet!
     public void showResult(View view) {
         int get_age = Integer.parseInt(age.getText().toString());
         double weight_value = Integer.parseInt(weight.getText().toString());
