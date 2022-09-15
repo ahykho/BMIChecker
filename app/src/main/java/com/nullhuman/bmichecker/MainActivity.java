@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         double weight_value = Integer.parseInt(weight.getText().toString());
         double get_height = (double)seekBar.getProgress()/ 100;
 
-        double bmi = weight_value / (double)(get_height * get_height);
+        double bmi = weight_value / (get_height * get_height);
 
         showBMI(bmi);
         }
