@@ -8,6 +8,17 @@
     tools:context=".NutriActivity">
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/main_button_nutri"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="?attr/homeAsUpIndicator"
+        android:onClick="showMain"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UsingOnClickInXml" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/calculate_nutri"
         android:layout_width="200dp"
         android:layout_height="wrap_content"

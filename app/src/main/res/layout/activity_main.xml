@@ -75,7 +75,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="9dp"
+                    android:layout_marginEnd="8dp"
                     android:background="@drawable/ic_add"
                     android:onClick="increaseAge"
                     tools:ignore="UsingOnClickInXml" />
@@ -139,7 +139,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="9dp"
+                    android:layout_marginEnd="8dp"
                     android:background="@drawable/ic_add"
                     android:onClick="increaseWeight"
                     tools:ignore="UsingOnClickInXml" />

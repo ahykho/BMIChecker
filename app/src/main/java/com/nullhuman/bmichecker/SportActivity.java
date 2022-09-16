@@ -14,10 +14,14 @@ public class SportActivity extends AppCompatActivity {
     }
     public void showSport(View view) {
     }
-    // experimental back button..
+    public void showMain(View view) {
+        setContentView(R.layout.activity_main);
+    }
+
+    // experimental back button.. not working
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        this.setContentView(R.layout.activity_main);
+        this.onPause();
     }
 }

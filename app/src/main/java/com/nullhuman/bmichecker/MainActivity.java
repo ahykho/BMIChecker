@@ -119,13 +119,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    // new checked working page-switch |main -to- Nutri && main -to- Sport|
-    public void showNutrient(View view) {
-        setContentView(R.layout.activity_nutri);
-    }
 
-    public void showSport(View view) {
-        setContentView(R.layout.activity_sport);
+    // new checked working page-switch |nutri<->main<->sport|
+    public void showNutrient(View view) {setContentView(R.layout.activity_nutri);
+    }
+    public void showSport(View view) {setContentView(R.layout.activity_sport);
+    }
+    public void showMain(View view) {setContentView(R.layout.activity_main);
     }
 }
 
