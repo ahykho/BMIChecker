@@ -12,15 +12,13 @@ public class NutriActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nutri);
     }
-
     public void showNutrient(View view) {
     }
-
     // experimental back button..
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        this.onPause();
+        this.setContentView(R.layout.activity_main);
     }
 }
 
