@@ -32,9 +32,10 @@ public class MainActivity extends AppCompatActivity {
         seekBar.setOnSeekBarChangeListener(listener);
         height_value = findViewById(R.id.height_value);
 
+        // switch to Nutrient Activity
         button = findViewById(R.id.nutrient_button);
         button.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, NutriActivity.class)));
-
+        // switch to Sport Activity
         button = findViewById(R.id.sport_button);
         button.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, SportActivity.class)));
 
