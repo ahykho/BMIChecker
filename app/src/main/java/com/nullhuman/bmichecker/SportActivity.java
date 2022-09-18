@@ -9,7 +9,7 @@ import java.util.Objects;
 public class SportActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sport);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
