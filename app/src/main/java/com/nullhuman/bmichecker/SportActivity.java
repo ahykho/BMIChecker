@@ -14,9 +14,6 @@ public class SportActivity extends AppCompatActivity {
     }
     public void showSport(View view) {
     }
-    public void showMain(View view) {
-        setContentView(R.layout.activity_main);
-    }
 
     // experimental back button.. not working
     @Override

@@ -14,9 +14,6 @@ public class NutriActivity extends AppCompatActivity {
     }
     public void showNutrient(View view) {
     }
-    public void showMain(View view) {
-        setContentView(R.layout.activity_main);
-    }
 
     // experimental back button.. not working
     @Override
