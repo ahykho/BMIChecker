@@ -122,12 +122,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
 
-        ok.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                alertDialog.dismiss();
-            }
-        });
+        ok.setOnClickListener(v -> alertDialog.dismiss());
     }
 }
 //page seems ok.. almost
