@@ -125,8 +125,5 @@ public class MainActivity extends AppCompatActivity {
     }
     public void showSport(View view) {setContentView(R.layout.activity_sport);
     }
-    public void showMain(View view) {setContentView(R.layout.activity_main);
-    }
 }
-
 //page seems ok.. almost
