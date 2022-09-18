@@ -6,10 +6,12 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatSeekBar;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView height_value;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Button button;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         age = findViewById(R.id.age);
@@ -28,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
         seekBar = findViewById(R.id.seek_bar);
         seekBar.setOnSeekBarChangeListener(listener);
         height_value = findViewById(R.id.height_value);
+
+        button = findViewById(R.id.nutrient_button);
+        button.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, NutriActivity.class)));
+
+        button = findViewById(R.id.sport_button);
+        button.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, SportActivity.class)));
 
     }
     // Seekbar coding for Height //
@@ -118,12 +127,6 @@ public class MainActivity extends AppCompatActivity {
                 alertDialog.dismiss();
             }
         });
-    }
-
-    // new checked working page-switch |nutri<->main<->sport|
-    public void showNutrient(View view) {setContentView(R.layout.activity_nutri);
-    }
-    public void showSport(View view) {setContentView(R.layout.activity_sport);
     }
 }
 //page seems ok.. almost
