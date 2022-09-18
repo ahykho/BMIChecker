@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-    // Setter for custom
+    // Setter for custom dialog aka Result, as alert style
     private void showCustomDialog(int id, String title, String tip) {
         ViewGroup viewGroup = findViewById(android.R.id.content);
         View view = LayoutInflater.from(this).inflate(R.layout.custome_dialog, viewGroup, false);
