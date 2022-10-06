@@ -234,22 +234,13 @@
 
 
             <TextView
-                android:id="@+id/im"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:padding="8dp"
-                android:text="I'm"
-                android:textColor="?android:attr/textColorPrimary"
-                android:textSize="42sp"
-                tools:ignore="HardcodedText" />
-
-            <TextView
                 android:id="@+id/male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_toEndOf="@id/gender_switch"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="2dp"
                 android:padding="16dp"
                 android:text="Male"
                 android:textColor="?android:attr/textColorPrimary"
@@ -261,7 +252,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_toEndOf="@id/im"
+                android:layout_marginBottom="0dp"
                 android:padding="16dp"
                 android:text="Female"
                 android:textColor="?android:attr/textColorPrimary"
@@ -273,7 +264,12 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:layout_marginStart="76dp"
+                android:layout_marginEnd="76dp"
+                android:layout_marginBottom="1dp"
+                android:layout_toStartOf="@+id/male"
                 android:layout_toEndOf="@id/female"
+                android:checked="false"
                 android:padding="16dp" />
 
 
