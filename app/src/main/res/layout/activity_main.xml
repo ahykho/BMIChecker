@@ -259,7 +259,7 @@
                 android:textSize="18sp"
                 tools:ignore="HardcodedText" />
 
-            <androidx.appcompat.widget.SwitchCompat
+            <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/gender_switch"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
@@ -269,7 +269,6 @@
                 android:layout_marginBottom="1dp"
                 android:layout_toStartOf="@+id/male"
                 android:layout_toEndOf="@id/female"
-                android:checked="false"
                 android:padding="16dp" />
 
 

@@ -4,12 +4,11 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatSeekBar;
-import androidx.appcompat.widget.SwitchCompat;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.google.android.material.switchmaterial.SwitchMaterial;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -25,12 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView weight;
     private AppCompatSeekBar seekBar;
     private TextView height_value;
-    // .. switch female-male
-    boolean switch_status;
-    SharedPreferences myPreferences;
-    SharedPreferences.Editor myEditor;
-    SwitchCompat switchButton;
-
+    // MATERIAL- switch female-male
+    SwitchMaterial switchgender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,14 +42,10 @@ public class MainActivity extends AppCompatActivity {
             seekBar.setOnSeekBarChangeListener(listener);
 
             // .. switch female-male
-            switchButton = findViewById(R.id.gender_switch);
-            String MY_PREF = "switch_prefs";
-            myPreferences = getSharedPreferences(MY_PREF,MODE_PRIVATE);
-            myEditor = getSharedPreferences(MY_PREF,MODE_PRIVATE).edit();
-            String SWITCH_STATUS = "switch_status";
-            switch_status = myPreferences.getBoolean(SWITCH_STATUS, false);
-            switchButton.setChecked(switch_status);
-            switchButton.setOnCheckedChangeListener((compoundButton, b) -> {});
+            switchgender = findViewById(R.id.gender_switch);
+            switchgender.setOnCheckedChangeListener(
+                    (buttonView, isChecked) -> Log.d("TAG", "Password Switch is checked " +
+                    isChecked));
 
             // switch to Nutrient Activity
             button = findViewById(R.id.nutrient_button);
@@ -127,7 +119,8 @@ public class MainActivity extends AppCompatActivity {
             // BMI - Male
             double bmiM = weight_value / (get_height * get_height);
             // differ calculation via gender_switch
-            if (switch_status){
+
+            if (switchgender.isChecked()){
                 showBMImale(bmiM);
             }else{
                 showBMIfemale(bmiF);
@@ -181,4 +174,3 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
-//page seems ok.. almost
