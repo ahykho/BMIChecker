@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             // .. switch female-male
             switchgender = findViewById(R.id.gender_switch);
             switchgender.setOnCheckedChangeListener(
-                    (buttonView, isChecked) -> Log.d("TAG", "Password Switch is checked " +
+                    (buttonView, isChecked) -> Log.d("TAG", "checked " +
                     isChecked));
 
             // switch to Nutrient Activity
