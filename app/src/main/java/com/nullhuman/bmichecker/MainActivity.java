@@ -8,11 +8,11 @@ import androidx.appcompat.widget.AppCompatSeekBar;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -23,10 +23,10 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 public class MainActivity extends AppCompatActivity {
     private TextView age;
     private TextView weight;
-    private AppCompatSeekBar seekBar;
     private TextView height_value;
-    // MATERIAL- switch female-male
-    SwitchMaterial switchgender;
+    private AppCompatSeekBar seekBar;
+    private SwitchMaterial switchgender;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,18 +34,14 @@ public class MainActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
 
-            // age, weight, height_value, seekBar && ..
+            // age, weight, height_value, seekBar && gender switch
             age = findViewById(R.id.age);
             weight = findViewById(R.id.weight);
-            seekBar = findViewById(R.id.seek_bar);
             height_value = findViewById(R.id.height_value);
-            seekBar.setOnSeekBarChangeListener(listener);
-
-            // .. switch female-male
+            seekBar = findViewById(R.id.seek_bar);
+            seekBar.setOnSeekBarChangeListener(seekBarListener);
             switchgender = findViewById(R.id.gender_switch);
-            switchgender.setOnCheckedChangeListener(
-                    (buttonView, isChecked) -> Log.d("TAG", "checked " +
-                    isChecked));
+            switchgender.setOnCheckedChangeListener(switchgenderListener);
 
             // switch to Nutrient Activity
             button = findViewById(R.id.nutrient_button);
@@ -56,8 +52,9 @@ public class MainActivity extends AppCompatActivity {
             button.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, SportActivity.class)));
             }
 
-    // Seekbar coding for Height //
-    private final SeekBar.OnSeekBarChangeListener listener = new SeekBar.OnSeekBarChangeListener() {
+
+    // Seekbar coding for Height
+    private final SeekBar.OnSeekBarChangeListener seekBarListener = new SeekBar.OnSeekBarChangeListener() {
             @SuppressLint("DefaultLocale")
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -70,6 +67,17 @@ public class MainActivity extends AppCompatActivity {
             public void onStopTrackingTouch(SeekBar seekBar) {
             }
         };
+
+
+    // Switch coding for gender
+    private final CompoundButton.OnCheckedChangeListener switchgenderListener = new CompoundButton.OnCheckedChangeListener(){
+
+
+        @Override
+        public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+            switchgender.isChecked();
+        }
+    };
 
 
     // Code increasing Age by clicks
@@ -171,6 +179,5 @@ public class MainActivity extends AppCompatActivity {
             alertDialog.show();
 
             ok.setOnClickListener(v -> alertDialog.dismiss());
-
     }
 }
