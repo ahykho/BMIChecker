@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Student/AndroidStudioProjects/BMIChecker/app/src/main/res/layout/activity_main.xml" value="0.11043566362715299" />
+        <entry key="..\:/Users/Student/AndroidStudioProjects/BMIChecker/app/src/main/res/layout/activity_nutri.xml" value="0.11043566362715299" />
+        <entry key="..\:/Users/Student/AndroidStudioProjects/BMIChecker/app/src/main/res/layout/activity_sport.xml" value="0.11043566362715299" />
         <entry key="..\:/Users/ikram/AndroidStudioProjects/BMIChecker/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1675" />
         <entry key="..\:/Users/ikram/AndroidStudioProjects/BMIChecker/app/src/main/res/drawable/calculate_button_background.xml" value="0.2715" />
         <entry key="..\:/Users/ikram/AndroidStudioProjects/BMIChecker/app/src/main/res/drawable/circle.xml" value="0.28" />
